@@ -1,0 +1,45 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="ClickClack API Draft v1">
+
+    <test name="Clacks EndPoint">
+
+        <classes>
+
+            <class name="com.thorium.restassured.clickclack.api.tests.draft.v1.ClacksEndPointTestSet" />
+
+        </classes>
+
+    </test>
+
+    <test name="Clacks WithId EndPoint">
+
+        <classes>
+
+            <class name="com.thorium.restassured.clickclack.api.tests.draft.v1.ClacksWithIdEndPointTestSet" />
+
+        </classes>
+
+    </test>
+
+    <test name="Root EndPoint">
+
+        <classes>
+
+            <class name="com.thorium.restassured.clickclack.api.tests.draft.v1.RootEndPointTestSet" />
+
+        </classes>
+
+    </test>
+
+    <test name="end to end">
+
+        <classes>
+
+            <class name="com.thorium.restassured.clickclack.api.tests.draft.v1.EndToEndTestSet" />
+
+        </classes>
+
+    </test>
+
+</suite>

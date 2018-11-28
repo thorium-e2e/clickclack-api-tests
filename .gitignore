@@ -1,0 +1,15 @@
+
+.idea/compiler.xml
+.idea
+.idea/
+clickclack-api-tests.iml
+.idea/workspace.xml
+.idea/modules.xml
+.idea/modules.xml
+.idea/misc.xml
+.idea/vcs.xml
+*/target/**
+*/target
+rest-assured-regression-tests/rest-assured-regression-tests.iml
+rest-assured-models/rest-assured-models.iml
+.idea/vcs.xml

@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="ClickClack API Draft v1">
+<suite name="ClickClack API Draft v1" thread-count="10" parallel="classes">
 
     <listeners>
 

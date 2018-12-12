@@ -1,9 +1,11 @@
 package com.clickclack.api.autotests.draft.v1;
 
 import com.clickclack.api.autotests.RestAssuredApiTestSet;
+import com.clickclack.api.autotests.common.ExtentLogger;
+import com.clickclack.api.autotests.common.MyRequest;
+import com.clickclack.api.autotests.common.MyResponse;
+import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import static io.restassured.RestAssured.given;
 
 public class RootEndPointTestSet extends RestAssuredApiTestSet {
 
@@ -13,13 +15,10 @@ public class RootEndPointTestSet extends RestAssuredApiTestSet {
             dataProvider = "ApiUriProvider"
     )
     public void getApiHomeHasStatusCodeOk(String API_URI) {
-        given()
-            .log().body()
-        .when()
-            .get(API_URI + "/")
-        .then()
-            .log().body()
-        .and()
-            .statusCode(200);
+        MyRequest request = new MyRequest("GET", API_URI + "/", null, null);
+        ExtentLogger.INFO(request.toString());
+        MyResponse response = request.send();
+        ExtentLogger.INFO(String.valueOf(response.getStatusCode()));
+        Assert.assertEquals(response.getStatusCode(), 200);
     }
 }

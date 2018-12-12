@@ -36,7 +36,7 @@ public class ExtentListener implements IClassListener, ISuiteListener, IInvokedM
 
     public void beforeInvocation(IInvokedMethod method, ITestResult testResult) {
         String paramName = Arrays.asList(testResult.getParameters()).toString();
-        ExtentManager.setCurrentTestMethod(ExtentManager.getSuiteReport().startTest(method.getTestMethod().getMethodName() + " - " + method.getTestMethod().getCurrentInvocationCount() + 1 + " - " + paramName));
+        ExtentManager.setCurrentTestMethod(ExtentManager.getSuiteReport().startTest(method.getTestMethod().getMethodName() + " - " + (method.getTestMethod().getCurrentInvocationCount() + 1) + " - " + paramName));
         getCurrentTestClass().appendChild(ExtentManager.getCurrentTestMethod());
         ExtentManager.getCurrentTestMethod().setDescription(method.getTestMethod().getDescription());
         ExtentManager.getCurrentTestMethod().assignAuthor("Adrian Pothuaud");

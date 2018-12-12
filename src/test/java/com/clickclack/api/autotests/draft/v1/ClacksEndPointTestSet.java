@@ -1,21 +1,15 @@
 package com.clickclack.api.autotests.draft.v1;
 
 import com.clickclack.api.autotests.RestAssuredApiTestSet;
+import com.clickclack.api.autotests.common.ExtentLogger;
+import com.clickclack.api.autotests.common.MyRequest;
+import com.clickclack.api.autotests.common.MyResponse;
 import com.clickclack.api.autotests.models.Clack;
 import com.google.gson.Gson;
-import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.config.LogConfig;
-import io.restassured.filter.log.LogDetail;
-import io.restassured.internal.print.RequestPrinter;
-import io.restassured.response.Response;
-import io.restassured.specification.FilterableRequestSpecification;
-import io.restassured.specification.RequestSpecification;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.io.PrintStream;
-
-import static io.restassured.RestAssured.given;
+import java.util.HashMap;
 
 public class ClacksEndPointTestSet extends RestAssuredApiTestSet {
 
@@ -25,14 +19,11 @@ public class ClacksEndPointTestSet extends RestAssuredApiTestSet {
             dataProvider = "ApiUriProvider"
     )
     public void getClacksHasStatusCodeOk(String API_URI) {
-        given()
-            .log().body()
-        .when()
-            .get(API_URI + "/")
-        .then()
-            .log().body()
-        .and()
-            .statusCode(200);
+        MyRequest request = new MyRequest("GET", API_URI + "/clacks", null, null);
+        ExtentLogger.INFO(request.toString());
+        MyResponse response = request.send();
+        ExtentLogger.INFO(response.toString());
+        Assert.assertEquals(response.getStatusCode(), 200);
     }
 
     @Test(
@@ -41,19 +32,18 @@ public class ClacksEndPointTestSet extends RestAssuredApiTestSet {
             dataProvider = "ApiUriProvider"
     )
     public void postClacksHasStatusCodeCreated(String API_URI) {
+
+        HashMap<String, String> headers = new HashMap<String, String>();
+        headers.put("Content-Type", "application/json");
+
         Clack newClack = new Clack();
         Gson gson = new Gson();
         String json = gson.toJson(newClack);
-        given()
-            .log().body()
-        .with()
-            .header("Content-Type", "application/json")
-            .body(json)
-        .when()
-            .post(API_URI + "/clacks/")
-        .then()
-            .log().body()
-        .and()
-            .statusCode(201);
+
+        MyRequest request = new MyRequest("POST", API_URI + "/clacks", headers, json);
+        ExtentLogger.INFO(request.toString());
+        MyResponse response = request.send();
+        ExtentLogger.INFO(response.toString());
+        Assert.assertEquals(response.getStatusCode(), 201);
     }
 }

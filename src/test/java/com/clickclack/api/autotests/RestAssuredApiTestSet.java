@@ -7,7 +7,9 @@ public class RestAssuredApiTestSet {
     @DataProvider
     public static Object[][] ApiUriProvider() {
         return new Object[][]{
-                {"https://rec-clickclack-api.herokuapp.com"}
+                {"http://localhost:5000"},
+                {"https://rec-clickclack-api.herokuapp.com"},
+                {"https://clickclack-api.herokuapp.com"},
         };
     }
 }

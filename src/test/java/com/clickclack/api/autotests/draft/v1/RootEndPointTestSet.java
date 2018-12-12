@@ -12,7 +12,7 @@ public class RootEndPointTestSet extends RestAssuredApiTestSet {
     @Test(
             groups = {"ep"},
             description = "GET / => 200",
-            dataProvider = "ApiUriProvider"
+            dataProvider = "ParametrizedProvider"
     )
     public void getApiHomeHasStatusCodeOk(String API_URI) {
         MyRequest request = new MyRequest("GET", API_URI + "/", null, null);

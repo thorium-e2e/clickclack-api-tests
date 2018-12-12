@@ -21,7 +21,7 @@ public class ClacksWithIdEndPointTestSet extends RestAssuredApiTestSet {
     @Test(
             groups = {"ep"},
             description = "GET /clacks/ID => 200",
-            dataProvider = "ApiUriProvider"
+            dataProvider = "ParametrizedProvider"
     )
     public void getClacksWithIdHasStatusCodeOk(String API_URI) {
         ArrayList<String> ids =
@@ -42,7 +42,7 @@ public class ClacksWithIdEndPointTestSet extends RestAssuredApiTestSet {
             groups = {"ep"},
             description = "PUT /clacks/ID => 200",
             dependsOnMethods = {"getClacksWithIdHasStatusCodeOk"},
-            dataProvider = "ApiUriProvider"
+            dataProvider = "ParametrizedProvider"
     )
     public void putClacksWithIdHasStatusCodeOk(String API_URI) {
         HashMap<String, String> headers = new HashMap<String, String>();
@@ -63,7 +63,7 @@ public class ClacksWithIdEndPointTestSet extends RestAssuredApiTestSet {
             groups = {"ep"},
             description = "DELETE /clacks/ID => 204",
             dependsOnMethods = {"getClacksWithIdHasStatusCodeOk"},
-            dataProvider = "ApiUriProvider"
+            dataProvider = "ParametrizedProvider"
     )
     public void deleteClacksWithIdHasStatusCodeNoContent(String API_URI) {
         MyRequest request = new MyRequest("DELETE", API_URI + "/clacks/" + ID, null, null);

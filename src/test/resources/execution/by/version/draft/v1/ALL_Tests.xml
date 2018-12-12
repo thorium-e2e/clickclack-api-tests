@@ -1,0 +1,51 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="ClickClack API Draft v1" thread-count="10" parallel="classes">
+
+    <listeners>
+
+        <listener class-name="com.clickclack.api.autotests.listeners.ExtentListener" />
+        <listener class-name="com.clickclack.api.autotests.listeners.SlackNotifier" />
+
+    </listeners>
+
+   <test name="Clacks EndPoint">
+
+        <classes>
+
+            <class name="com.clickclack.api.autotests.draft.v1.ClacksEndPointTestSet" />
+
+        </classes>
+
+    </test>
+
+    <test name="Clacks WithId EndPoint">
+
+        <classes>
+
+            <class name="com.clickclack.api.autotests.draft.v1.ClacksWithIdEndPointTestSet" />
+
+        </classes>
+
+    </test>
+
+    <test name="Root EndPoint">
+
+        <classes>
+
+            <class name="com.clickclack.api.autotests.draft.v1.RootEndPointTestSet" />
+
+        </classes>
+
+    </test>
+    <test name="end to end">
+
+        <classes>
+
+            <class name="com.clickclack.api.autotests.draft.v1.EndToEndTestSet" />
+
+        </classes>
+
+    </test>
+
+</suite>

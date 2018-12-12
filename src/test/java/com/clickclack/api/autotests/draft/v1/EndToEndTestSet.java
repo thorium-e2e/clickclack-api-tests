@@ -16,7 +16,7 @@ public class EndToEndTestSet extends RestAssuredApiTestSet {
     @Test(
             groups = {"e2e"},
             description = "CRUD Clacks",
-            dataProvider = "ApiUriProvider"
+            dataProvider = "ParametrizedProvider"
     )
     public void CRUDClacks(String API_URI) {
         Logger.info("Open API URI and verify status code...");

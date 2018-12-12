@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="10" guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [ClickClack API Draft v1]" parallel="classes">
+  <listeners>
+    <listener class-name="com.clickclack.api.autotests.listeners.ExtentListener"/>
+    <listener class-name="com.clickclack.api.autotests.listeners.SlackNotifier"/>
+  </listeners>
+  <test thread-count="10" verbose="0" name="Clacks EndPoint(failed)" parallel="classes">
+    <classes>
+      <class name="com.clickclack.api.autotests.draft.v1.ClacksEndPointTestSet">
+        <methods>
+          <include name="getClacksHasStatusCodeOk" invocation-numbers="0"/>
+          <include name="postClacksHasStatusCodeCreated" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.clickclack.api.autotests.draft.v1.ClacksEndPointTestSet -->
+    </classes>
+  </test> <!-- Clacks EndPoint(failed) -->
+  <test thread-count="10" verbose="0" name="Clacks WithId EndPoint(failed)" parallel="classes">
+    <classes>
+      <class name="com.clickclack.api.autotests.draft.v1.ClacksWithIdEndPointTestSet">
+        <methods>
+          <include name="getClacksWithIdHasStatusCodeOk" invocation-numbers="0"/>
+          <include name="putClacksWithIdHasStatusCodeOk"/>
+          <include name="deleteClacksWithIdHasStatusCodeNoContent"/>
+        </methods>
+      </class> <!-- com.clickclack.api.autotests.draft.v1.ClacksWithIdEndPointTestSet -->
+    </classes>
+  </test> <!-- Clacks WithId EndPoint(failed) -->
+  <test thread-count="10" verbose="0" name="Root EndPoint(failed)" parallel="classes">
+    <classes>
+      <class name="com.clickclack.api.autotests.draft.v1.RootEndPointTestSet">
+        <methods>
+          <include name="getApiHomeHasStatusCodeOk" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.clickclack.api.autotests.draft.v1.RootEndPointTestSet -->
+    </classes>
+  </test> <!-- Root EndPoint(failed) -->
+  <test thread-count="10" verbose="0" name="end to end(failed)" parallel="classes">
+    <classes>
+      <class name="com.clickclack.api.autotests.draft.v1.EndToEndTestSet">
+        <methods>
+          <include name="CRUDClacks" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.clickclack.api.autotests.draft.v1.EndToEndTestSet -->
+    </classes>
+  </test> <!-- end to end(failed) -->
+</suite> <!-- Failed suite [ClickClack API Draft v1] -->

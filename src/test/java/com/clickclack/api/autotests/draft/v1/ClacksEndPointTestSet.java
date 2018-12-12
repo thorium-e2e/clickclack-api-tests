@@ -16,7 +16,7 @@ public class ClacksEndPointTestSet extends RestAssuredApiTestSet {
     @Test(
             groups = {"ep"},
             description = "GET /clacks => 200",
-            dataProvider = "ApiUriProvider"
+            dataProvider = "ParametrizedProvider"
     )
     public void getClacksHasStatusCodeOk(String API_URI) {
         MyRequest request = new MyRequest("GET", API_URI + "/clacks", null, null);
@@ -29,7 +29,7 @@ public class ClacksEndPointTestSet extends RestAssuredApiTestSet {
     @Test(
             groups = {"ep"},
             description = "POST /clacks => 201",
-            dataProvider = "ApiUriProvider"
+            dataProvider = "ParametrizedProvider"
     )
     public void postClacksHasStatusCodeCreated(String API_URI) {
 

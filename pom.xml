@@ -75,7 +75,7 @@
                         <propertyName>data.provider</propertyName>
                     </systemPropertyVariables>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/execution/testng.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/execution/by/version/draft/v1/testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

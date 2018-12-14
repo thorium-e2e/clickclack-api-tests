@@ -1,5 +1,6 @@
 package com.clickclack.api.autotests.models;
 
+@SuppressWarnings("unused")
 public class Clack {
 
     private String _id;

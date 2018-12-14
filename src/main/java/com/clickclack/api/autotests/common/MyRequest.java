@@ -8,38 +8,6 @@ import static io.restassured.RestAssured.given;
 
 public class MyRequest {
 
-    public HashMap<String, String> getHeaders() {
-        return headers;
-    }
-
-    public void setHeaders(HashMap<String, String> headers) {
-        this.headers = headers;
-    }
-
-    public String getBody() {
-        return body;
-    }
-
-    public void setBody(String body) {
-        this.body = body;
-    }
-
-    public String getMethod() {
-        return method;
-    }
-
-    public void setMethod(String method) {
-        this.method = method;
-    }
-
-    public String getURL() {
-        return URL;
-    }
-
-    public void setURL(String URL) {
-        this.URL = URL;
-    }
-
     public MyRequest(String method, String URL, HashMap<String, String> headers, String body) {
         this.headers = (headers != null) ? headers : new HashMap<String, String>();
         this.body = (body != null) ? body : "";
@@ -61,10 +29,10 @@ public class MyRequest {
                 + "\n**********";
     }
 
-    HashMap<String, String> headers;
-    String body;
-    String method;
-    String URL;
+    private HashMap<String, String> headers;
+    private String body;
+    private String method;
+    private String URL;
 
     public MyResponse send() {
 

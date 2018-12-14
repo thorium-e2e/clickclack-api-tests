@@ -8,20 +8,26 @@ public class RestAssuredApiTestSet {
     public static Object[][] ParametrizedProvider() throws Exception {
         if(System.getProperty("data.provider") == null){
             throw new Exception("Pas de data provider!");
-        } else if (System.getProperty("data.provider") == "local"){
+        } else if (System.getProperty("data.provider").equals("local")){
             return new Object[][]{
                     {"http://localhost:5000"},
             };
-        }else if (System.getProperty("data.provider") == "rec"){
+        }else if (System.getProperty("data.provider").equals("rec")){
             return new Object[][]{
                     {"https://rec-clickclack-api.herokuapp.com"},
             };
-        }else if (System.getProperty("data.provider") == "prod"){
+        }else if (System.getProperty("data.provider").equals("prod")){
             return new Object[][]{
                     {"https://clickclack-api.herokuapp.com"},
             };
+        }else if (System.getProperty("data.provider").equals("all")){
+            return new Object[][]{
+                    {"http://localhost:5000"},
+                    {"https://rec-clickclack-api.herokuapp.com"},
+                    {"https://clickclack-api.herokuapp.com"},
+            };
         }else {
-            throw new Exception("Parametre non supporte data.provider");
+            throw new Exception("Parametre non supporte data.provider: " + System.getProperty("data.provider"));
         }
     }
 

@@ -4,9 +4,9 @@ import io.restassured.response.Response;
 
 public class MyResponse {
 
-    Response response;
+    private Response response;
 
-    public MyResponse(Response response) {
+    MyResponse(Response response) {
         this.response = response;
     }
 
@@ -17,7 +17,8 @@ public class MyResponse {
     @Override
     public String toString() {
         return    "RESPONSE ***********\n"
-                + "\nbody:\n"
+                + "- SC : " + String.valueOf(getStatusCode()) + "\n"
+                + "- body:\n"
                 + this.response.getBody().prettyPrint()
                 + "\n**********";
     }

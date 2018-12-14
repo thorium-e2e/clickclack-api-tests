@@ -1,24 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 17, Failures: 5, Errors: 0, Skipped: 2, Time elapsed: 63.055 s <<< FAILURE! - in TestSuite
-getClacksHasStatusCodeOk(com.clickclack.api.autotests.draft.v1.ClacksEndPointTestSet)  Time elapsed: 3.142 s  <<< FAILURE!
-java.net.ConnectException: Connection refused: connect
-	at com.clickclack.api.autotests.draft.v1.ClacksEndPointTestSet.getClacksHasStatusCodeOk(ClacksEndPointTestSet.java:24)
-
-postClacksHasStatusCodeCreated(com.clickclack.api.autotests.draft.v1.ClacksEndPointTestSet)  Time elapsed: 11.181 s  <<< FAILURE!
-java.net.ConnectException: Connection refused: connect
-	at com.clickclack.api.autotests.draft.v1.ClacksEndPointTestSet.postClacksHasStatusCodeCreated(ClacksEndPointTestSet.java:45)
-
-getClacksWithIdHasStatusCodeOk(com.clickclack.api.autotests.draft.v1.ClacksWithIdEndPointTestSet)  Time elapsed: 2.796 s  <<< FAILURE!
-java.net.ConnectException: Connection refused: connect
-	at com.clickclack.api.autotests.draft.v1.ClacksWithIdEndPointTestSet.getClacksWithIdHasStatusCodeOk(ClacksWithIdEndPointTestSet.java:29)
-
-getApiHomeHasStatusCodeOk(com.clickclack.api.autotests.draft.v1.RootEndPointTestSet)  Time elapsed: 2.807 s  <<< FAILURE!
-java.net.ConnectException: Connection refused: connect
-	at com.clickclack.api.autotests.draft.v1.RootEndPointTestSet.getApiHomeHasStatusCodeOk(RootEndPointTestSet.java:20)
-
-CRUDClacks(com.clickclack.api.autotests.draft.v1.EndToEndTestSet)  Time elapsed: 2.711 s  <<< FAILURE!
-java.net.ConnectException: Connection refused: connect
-	at com.clickclack.api.autotests.draft.v1.EndToEndTestSet.CRUDClacks(EndToEndTestSet.java:26)
-
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 17.321 s - in TestSuite
